@@ -29,7 +29,9 @@ public class PassingCars {
         System.out.println(p.solution(new int[]{0, 0, 0, 0}));
         System.out.println(p.solution(new int[]{1, 1, 1, 1}));
         System.out.println(p.solution(new int[]{1, 1}));
+        System.out.println(p.solution(new int[]{1, 0})); //doesn't cross
         System.out.println(p.solution(new int[]{0, 0}));
+        System.out.println(p.solution(new int[]{0, 1}));
         System.out.println(p.solution(new int[]{0}));
         System.out.println(p.solution(new int[]{1}));
     }

@@ -9,12 +9,14 @@ public class CountDiv {
         } else if (a > b) {
             return 0;
         } else {
-            return (b - a) / k;
+            return (b - a) / k + 1;
         }
     }
 
     public static void main(String[] args) {
         CountDiv countDiv = new CountDiv();
-        System.out.println(countDiv.solution(6, 11, 2));
+        int expected = 3;
+        int actual = countDiv.solution(6, 11, 2);
+        assert expected == actual : String.format("Expected %d, got %d", expected, actual);
     }
 }
