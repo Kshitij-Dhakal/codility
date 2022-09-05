@@ -1,8 +1,5 @@
 package codility.prefixsum;
 
-/**
- * <a href="https://app.codility.com/programmers/lessons/5-prefix_sums/passing_cars/">Problem Definition</a>
- */
 public class PassingCars {
     public int solution(int[] A) {
         int[] p = new int[A.length + 1];
