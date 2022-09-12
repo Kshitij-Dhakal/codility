@@ -15,7 +15,7 @@ public class Fish {
                     rs.pop();
                 }
                 if (rs.isEmpty()) {
-                    count++; //safe fish moving upward in stream who never meets another fish
+                    count++; //A[i] is a safe fish moving upward in stream
                 }
             }
         }
