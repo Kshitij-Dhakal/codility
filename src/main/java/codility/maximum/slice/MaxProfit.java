@@ -4,6 +4,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class MaxProfit {
+
+    //this problem can be solved in two parts
+    //1. first find all the profit/loss between two consecutive days
+    //2. find the maxSliceSum from above array (sum from profit/loss between consecutive days between p and q days is the profit/loss between p and q days)
     public int solution(int[] A) {
         // write your code in Java SE 8
         List<Integer> diff = new LinkedList<>();
