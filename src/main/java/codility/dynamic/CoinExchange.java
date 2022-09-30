@@ -1,7 +1,9 @@
 package codility.dynamic;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CoinExchange {
 
@@ -9,13 +11,24 @@ public class CoinExchange {
         int d = 0;
         List<Integer> possibleOptions = new ArrayList<>();
         possibleOptions.add(n);
+        Map<Integer, Integer> parentRef = new HashMap<>();
         while (true) {
             List<Integer> newOptions = new ArrayList<>();
             for (var rem : possibleOptions) {
                 for (int coin : coins) {
-                    if (rem - coin > 0) {
-                        newOptions.add(rem - coin);
-                    } else if (rem - coin == 0) {
+                    int newNode = rem - coin;
+                    if (newNode >= 0 && !parentRef.containsKey(newNode)) {
+                        newOptions.add(newNode);
+                        parentRef.put(newNode, coin);
+                    }
+                    if (parentRef.containsKey(0)) {
+                        int currentCoin = 0;
+                        List<Integer> solution = new ArrayList<>();
+                        while (parentRef.containsKey(currentCoin)) {
+                            solution.add(parentRef.get(currentCoin));
+                            currentCoin += parentRef.get(currentCoin);
+                        }
+                        System.out.println(solution);
                         return d + 1;
                     }
                 }
@@ -32,5 +45,6 @@ public class CoinExchange {
         System.out.println(ce.getChange(new int[]{1, 3, 4, 5}, 9));
         System.out.println(ce.getChange(new int[]{1, 3, 4, 5}, 10));
         System.out.println(ce.getChange(new int[]{1, 3, 4, 5}, 15));
+        System.out.println(ce.getChange(new int[]{1, 2, 5}, 106));
     }
 }
