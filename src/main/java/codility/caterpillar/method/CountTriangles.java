@@ -7,9 +7,9 @@ public class CountTriangles {
         Arrays.sort(A);
         int count = 0;
         for (int h = 0; h + 2 < A.length; h++) {
-            //2,3,4,5
+            //1,2,5,8,10,12
+            int t = h + 2;
             for (int m = h + 1; m + 1 < A.length; m++) {
-                int t = h + 2;
                 while (t < A.length && A[h] > A[t] - A[m]) {
                     t++;
                 }
