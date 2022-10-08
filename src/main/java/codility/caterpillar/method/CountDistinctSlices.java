@@ -8,12 +8,12 @@ public class CountDistinctSlices {
         long count = 0;
         int t = 0;
         Set<Integer> c = new HashSet<>();
-        for (int h = 0; h < A.length; h++) {
+        for (int i : A) {
             while (t < A.length && !c.contains(A[t])) {
                 c.add(A[t++]);
             }
             count += c.size();
-            c.remove(A[h]);
+            c.remove(i);
         }
         return count > 1_000_000_000 ? 1_000_000_000 : (int) count;
     }
