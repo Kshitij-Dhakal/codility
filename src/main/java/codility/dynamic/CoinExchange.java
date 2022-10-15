@@ -28,7 +28,7 @@ public class CoinExchange {
                             solution.add(parentRef.get(currentCoin));
                             currentCoin += parentRef.get(currentCoin);
                         }
-                        System.out.println(solution);
+//                        System.out.println(solution);
                         return d + 1;
                     }
                 }
@@ -40,6 +40,7 @@ public class CoinExchange {
 
     public static void main(String[] args) {
         CoinExchange ce = new CoinExchange();
+        System.out.println(ce.getChange(new int[]{1, 3, 4}, 6));
         System.out.println(ce.getChange(new int[]{1, 3, 4, 5}, 7));
         System.out.println(ce.getChange(new int[]{1, 3, 4, 5}, 8));
         System.out.println(ce.getChange(new int[]{1, 3, 4, 5}, 9));
