@@ -1,6 +1,10 @@
 package codility.dynamic;
 
 public class FromJumps {
+    public static void main(String[] args) {
+        System.out.println(new FromJumps().solution(new int[]{2, 3}, 10, 10));
+    }
+
     public int solution(int[] s, int k, int q) {
         int[] dp = new int[k + 1];
         dp[0] = 1;
@@ -12,9 +16,5 @@ public class FromJumps {
             }
         }
         return dp[k];
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new FromJumps().solution(new int[]{2, 3}, 10, 10));
     }
 }

@@ -3,6 +3,11 @@ package codility.stack.and.queues;
 import java.util.Stack;
 
 public class Brackets {
+    public static void main(String[] args) {
+        Brackets b = new Brackets();
+        System.out.println(b.solution("{[()()]}"));
+    }
+
     public int solution(String S) {
         // write your code in Java SE 8
         Stack<Character> chStack = new Stack<>();
@@ -22,10 +27,5 @@ public class Brackets {
         } else if (a == '[' && b == ']') {
             return true;
         } else return a == '(' && b == ')';
-    }
-
-    public static void main(String[] args) {
-        Brackets b = new Brackets();
-        System.out.println(b.solution("{[()()]}"));
     }
 }

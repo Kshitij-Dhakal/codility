@@ -1,6 +1,13 @@
 package codility.euclidean.algorithm;
 
 public class CommonPrimeDivisors {
+    public static void main(String[] args) {
+        System.out.println(new CommonPrimeDivisors().lcm(15, 75));
+        System.out.println(new CommonPrimeDivisors().lcm(10, 30));
+        System.out.println(new CommonPrimeDivisors().lcm(3, 5));
+        System.out.println(new CommonPrimeDivisors().solution(new int[]{15, 10, 3}, new int[]{75, 30, 5}));
+    }
+
     public int solution(int[] A, int[] B) {
         // write your code in Java SE 8
         int count = 0;
@@ -42,12 +49,5 @@ public class CommonPrimeDivisors {
         } else {
             return gcf(b % a, a);
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new CommonPrimeDivisors().lcm(15, 75));
-        System.out.println(new CommonPrimeDivisors().lcm(10, 30));
-        System.out.println(new CommonPrimeDivisors().lcm(3, 5));
-        System.out.println(new CommonPrimeDivisors().solution(new int[]{15, 10, 3}, new int[]{75, 30, 5}));
     }
 }

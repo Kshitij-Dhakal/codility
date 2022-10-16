@@ -4,6 +4,13 @@ package codility.prefixsum;
  * <a href="https://www.youtube.com/watch?v=4SyckIAmYXk">Genomic Range Query Solution in Python and C++ Codility Solutions Lesson 5</a>
  */
 public class GenomicRangeQuery {
+    public static void main(String[] args) {
+        GenomicRangeQuery obj = new GenomicRangeQuery();
+        for (int v : obj.solution("CAGCCTA", new int[]{2, 5, 0}, new int[]{4, 5, 6})) {
+            System.out.println(v);
+        }
+    }
+
     public int[] solution(String S, int[] P, int[] Q) {
         // write your code in Java SE 8
         int[] A = new int[S.length()];
@@ -42,12 +49,5 @@ public class GenomicRangeQuery {
             }
         }
         return s;
-    }
-
-    public static void main(String[] args) {
-        GenomicRangeQuery obj = new GenomicRangeQuery();
-        for (int v : obj.solution("CAGCCTA", new int[]{2, 5, 0}, new int[]{4, 5, 6})) {
-            System.out.println(v);
-        }
     }
 }

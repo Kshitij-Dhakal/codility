@@ -1,6 +1,11 @@
 package codility.caterpillar.method;
 
 public class Exercise {
+    public static void main(String[] args) {
+        Exercise ex = new Exercise();
+        System.out.println(ex.caterpillarMethod(new int[]{6, 2, 7, 4, 1, 3, 6}, 12));
+    }
+
     public boolean caterpillarMethod(int[] a, int s) {
         int sum = 0;
         int i = 0;
@@ -15,10 +20,5 @@ public class Exercise {
             }
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-        Exercise ex = new Exercise();
-        System.out.println(ex.caterpillarMethod(new int[]{6, 2, 7, 4, 1, 3, 6}, 12));
     }
 }

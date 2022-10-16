@@ -1,6 +1,21 @@
 package codility.prefixsum;
 
 public class PassingCars {
+    public static void main(String[] args) {
+        PassingCars p = new PassingCars();
+        System.out.println(p.solution(new int[]{0, 0, 1, 1}));
+        System.out.println(p.solution(new int[]{0, 1, 0, 1, 1}));
+        System.out.println(p.solution(new int[]{1, 0, 0, 1, 1, 1}));
+        System.out.println(p.solution(new int[]{0, 0, 0, 0}));
+        System.out.println(p.solution(new int[]{1, 1, 1, 1}));
+        System.out.println(p.solution(new int[]{1, 1}));
+        System.out.println(p.solution(new int[]{1, 0})); //doesn't cross
+        System.out.println(p.solution(new int[]{0, 0}));
+        System.out.println(p.solution(new int[]{0, 1}));
+        System.out.println(p.solution(new int[]{0}));
+        System.out.println(p.solution(new int[]{1}));
+    }
+
     public int solution(int[] A) {
         int[] p = new int[A.length + 1];
         for (int i = 0; i < A.length; i++) {
@@ -18,21 +33,5 @@ public class PassingCars {
                 return -1;
         }
         return total;
-    }
-
-
-    public static void main(String[] args) {
-        PassingCars p = new PassingCars();
-        System.out.println(p.solution(new int[]{0, 0, 1, 1}));
-        System.out.println(p.solution(new int[]{0, 1, 0, 1, 1}));
-        System.out.println(p.solution(new int[]{1, 0, 0, 1, 1, 1}));
-        System.out.println(p.solution(new int[]{0, 0, 0, 0}));
-        System.out.println(p.solution(new int[]{1, 1, 1, 1}));
-        System.out.println(p.solution(new int[]{1, 1}));
-        System.out.println(p.solution(new int[]{1, 0})); //doesn't cross
-        System.out.println(p.solution(new int[]{0, 0}));
-        System.out.println(p.solution(new int[]{0, 1}));
-        System.out.println(p.solution(new int[]{0}));
-        System.out.println(p.solution(new int[]{1}));
     }
 }

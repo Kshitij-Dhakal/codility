@@ -1,6 +1,12 @@
 package codility.caterpillar.method;
 
 public class AbsDistinct {
+    public static void main(String[] args) {
+        System.out.println(new AbsDistinct().solution(new int[]{-5, -3, -1, 0, 3, 6}));
+        System.out.println(new AbsDistinct().solution(new int[]{0, 3, 3, 6}));
+        System.out.println(new AbsDistinct().solution(new int[]{-2147483648, -1, 0, 1}));
+    }
+
     public int solution(int[] A) {
         int c = 0;
         int x = 0;
@@ -16,11 +22,5 @@ public class AbsDistinct {
             c++;
         }
         return c;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new AbsDistinct().solution(new int[]{-5, -3, -1, 0, 3, 6}));
-        System.out.println(new AbsDistinct().solution(new int[]{0, 3, 3, 6}));
-        System.out.println(new AbsDistinct().solution(new int[]{-2147483648, -1, 0, 1}));
     }
 }

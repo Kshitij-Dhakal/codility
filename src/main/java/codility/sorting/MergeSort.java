@@ -3,6 +3,15 @@ package codility.sorting;
 import java.util.Arrays;
 
 public class MergeSort {
+    public static void main(String[] args) {
+        MergeSort ms = new MergeSort();
+        int[] arr = new int[]{5, 3, 2, 6, 7, 4, 1, 9, 0, 8};
+        ms.sort(arr, 0, arr.length - 1);
+        for (int i : arr) {
+            System.out.println(i);
+        }
+    }
+
     public void sort(int[] arr, int l, int r) {
         if (l < r) {
             int m = l + (r - l) / 2;
@@ -34,15 +43,6 @@ public class MergeSort {
         while (j < a2.length) {
             arr[l + k] = a2[j++];
             k++;
-        }
-    }
-
-    public static void main(String[] args) {
-        MergeSort ms = new MergeSort();
-        int[] arr = new int[]{5, 3, 2, 6, 7, 4, 1, 9, 0, 8};
-        ms.sort(arr, 0, arr.length - 1);
-        for (int i : arr) {
-            System.out.println(i);
         }
     }
 }

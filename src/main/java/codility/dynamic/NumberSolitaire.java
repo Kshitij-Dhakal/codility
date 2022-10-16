@@ -1,6 +1,10 @@
 package codility.dynamic;
 
 public class NumberSolitaire {
+    public static void main(String[] args) {
+        System.out.println(new NumberSolitaire().solution(new int[]{1, -2, 0, 9, -1, -2}));
+    }
+
     public int solution(int[] A) {
         int[] dp = new int[A.length];
         dp[0] = A[0];
@@ -11,9 +15,5 @@ public class NumberSolitaire {
             }
         }
         return dp[dp.length - 1];
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new NumberSolitaire().solution(new int[]{1, -2, 0, 9, -1, -2}));
     }
 }

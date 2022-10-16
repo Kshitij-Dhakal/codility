@@ -3,6 +3,11 @@ package codility.caterpillar.method;
 import java.util.Arrays;
 
 public class CountTriangles {
+    public static void main(String[] args) {
+        System.out.println(new CountTriangles().solution(new int[]{10, 2, 5, 1, 8, 12}));
+        System.out.println(new CountTriangles().solution(new int[]{1, 2, 5, 9, 10, 12, 13}));
+    }
+
     public int solution(int[] A) {
         Arrays.sort(A);
         int count = 0;
@@ -20,10 +25,5 @@ public class CountTriangles {
             }
         }
         return count;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new CountTriangles().solution(new int[]{10, 2, 5, 1, 8, 12}));
-        System.out.println(new CountTriangles().solution(new int[]{1, 2, 5, 9, 10, 12, 13}));
     }
 }
