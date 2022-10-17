@@ -16,22 +16,23 @@ public class FibFrog {
         int[] s = getAllReachableIn1Jump(A, fibs);
         for (int i = 0; i < s.length; i++) {
             if (s[i] == 0 && (i == A.length || A[i] == 1)) {
-                s[i] = Integer.MAX_VALUE;
+                var minSteps = Integer.MAX_VALUE;
                 for (var f : fibs) {
                     if (i - f >= 0 && s[i - f] > 0) {
-                        s[i] = s[i] <= s[i - f] ? s[i] : (s[i - f] + 1);
+                        minSteps = minSteps <= s[i - f] ? minSteps : (s[i - f] + 1);
                     }
                 }
+                s[i] = minSteps == Integer.MAX_VALUE ? -1 : minSteps;
             }
         }
-        return s[A.length] == Integer.MAX_VALUE ? -1 : s[A.length];
+        return s[A.length];
     }
 
     private int[] getAllReachableIn1Jump(int[] A, List<Integer> fibs) {
         int[] s = new int[A.length + 1];
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] == 1 && fibs.contains(i + 1)) {
-                s[i] = 1;
+        for (var fib : fibs) {
+            if (A[fib - 1] == 1) {
+                s[fib - 1] = 1;
             }
         }
         return s;
