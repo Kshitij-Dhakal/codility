@@ -15,15 +15,16 @@ public class FibFrog {
         }
         int[] s = getAllReachableIn1Jump(A, fibs);
         for (int i = 0; i < s.length; i++) {
-            if (s[i] == 0 && (i == A.length || A[i] == 1)) {
-                var minSteps = Integer.MAX_VALUE;
-                for (var f : fibs) {
-                    if (i - f >= 0 && s[i - f] > 0) {
-                        minSteps = minSteps <= s[i - f] ? minSteps : (s[i - f] + 1);
-                    }
-                }
-                s[i] = minSteps == Integer.MAX_VALUE ? -1 : minSteps;
+            if (s[i] != 0 || (i != A.length && A[i] != 1)) {
+                continue;
             }
+            var minSteps = Integer.MAX_VALUE;
+            for (var f : fibs) {
+                if (i - f >= 0 && s[i - f] > 0) {
+                    minSteps = minSteps <= s[i - f] ? minSteps : (s[i - f] + 1);
+                }
+            }
+            s[i] = minSteps == Integer.MAX_VALUE ? -1 : minSteps;
         }
         return s[A.length];
     }
