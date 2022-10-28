@@ -6,16 +6,18 @@ import lombok.extern.slf4j.Slf4j;
 public class Peaks {
     public int solution(int[] A) {
         int[] peaks = new int[A.length];
-        int peaksCount = 0;
+        int[] ps = new int[A.length + 1];
         for (int i = 1; i < A.length - 1; i++) {
             if (A[i] > A[i - 1] && A[i] > A[i + 1]) {
                 peaks[i] = 1;
-                peaksCount++;
             }
+            ps[i + 1] = ps[i] + peaks[i];
         }
-        int half = (A.length / 2) + 1; // At the very least each block contains two elements to satisfy all conditions
-        int n = Math.min(peaksCount, half); // There can be at most as many block as there are peaks or
-        // as many blocks as half of the array's length
+        ps[A.length] = ps[A.length - 1] + peaks[A.length - 1];
+        int n = ps[A.length - 1]; // There can be at most as many block as there are peaks
+        if (n == 0) {
+            return 0;
+        }
         while (n > 0) {
             if (A.length % n != 0) {
                 n--;
@@ -24,15 +26,7 @@ public class Peaks {
             int k = A.length / n;
             boolean hasPeakInAllBlock = true;
             for (int i = 0; i < A.length; i += k) {
-                boolean hasPeak = false;
-                for (int j = 0; j < k; j++) {
-                    int index = i + j;
-                    if (peaks[index] == 1) {
-                        hasPeak = true;
-                        break;
-                    }
-                }
-                if (!hasPeak) {
+                if (ps[i + k] == ps[i]) { // comparing i+k and i instead of i+k and i+1, because if first element is peak then i+k and i+1 will be equal
                     hasPeakInAllBlock = false;
                     break;
                 }
@@ -47,5 +41,6 @@ public class Peaks {
 
     public static void main(String[] args) {
         log.info("Peaks solution : {}", new Peaks().solution(new int[]{1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}));
+        log.info("Peaks solution : {}", new Peaks().solution(new int[]{1, 2, 3, 1}));
     }
 }
