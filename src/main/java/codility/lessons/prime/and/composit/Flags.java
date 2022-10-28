@@ -1,7 +1,10 @@
 package codility.lessons.prime.and.composit;
 
 public class Flags {
-    // TODO: 9/20/22
+
+    public static void main(String[] args) {
+        System.out.println(new Flags().solution(new int[]{1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}));
+    }
 
     public int solution(int[] A) {
         int[] peaks = new int[A.length];
@@ -29,9 +32,5 @@ public class Flags {
             }
         }
         return n;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new Flags().solution(new int[]{1, 5, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}));
     }
 }

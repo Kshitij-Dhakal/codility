@@ -5,6 +5,10 @@ import java.util.List;
 
 public class FibFrog {
 
+    public static void main(String[] args) {
+        System.out.println(new FibFrog().solution(new int[]{0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0}));
+    }
+
     public int solution(int[] A) {
         if (A.length == 0) {
             return 1;
@@ -47,9 +51,5 @@ public class FibFrog {
             fib.add(fib.get(fib.size() - 1) + fib.get(fib.size() - 2));
         }
         return fib;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(new FibFrog().solution(new int[]{0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0}));
     }
 }
