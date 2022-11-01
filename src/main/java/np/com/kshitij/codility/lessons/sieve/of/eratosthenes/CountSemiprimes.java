@@ -3,11 +3,14 @@ package np.com.kshitij.codility.lessons.sieve.of.eratosthenes;
 import np.com.kshitij.commons.Printer;
 
 public class CountSemiprimes {
-    // TODO: 9/21/22
+    public static void main(String[] args) {
+        Printer.print(new CountSemiprimes().solution(27, new int[]{1, 4, 16}, new int[]{26, 10, 20}));
+    }
+
     public int[] solution(int N, int[] P, int[] Q) {
         // write your code in Java SE 8
         int[] s = new int[N + 1];
-        for (int i = 2; i * i < N; i++) {
+        for (int i = 2; i * i < N + 1; i++) {
             int k = i * i;
             while (k <= N) {
                 if (s[k] == 0) {
@@ -31,9 +34,5 @@ public class CountSemiprimes {
             sol[i] = ps[Q[i] + 1] - ps[P[i]];
         }
         return sol;
-    }
-
-    public static void main(String[] args) {
-        Printer.print(new CountSemiprimes().solution(27, new int[]{1, 4, 16}, new int[]{26, 10, 20}));
     }
 }
