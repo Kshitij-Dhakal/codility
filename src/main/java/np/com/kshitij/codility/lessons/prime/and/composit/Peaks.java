@@ -4,6 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class Peaks {
+    public static void main(String[] args) {
+        log.info("Peaks solution : {}", new Peaks().solution(new int[]{1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}));
+        log.info("Peaks solution : {}", new Peaks().solution(new int[]{1, 2, 3, 1}));
+    }
+
     public int solution(int[] A) {
         int[] peaks = new int[A.length];
         int[] ps = new int[A.length + 1];
@@ -37,10 +42,5 @@ public class Peaks {
             n--;
         }
         return n;
-    }
-
-    public static void main(String[] args) {
-        log.info("Peaks solution : {}", new Peaks().solution(new int[]{1, 2, 3, 4, 3, 4, 1, 2, 3, 4, 6, 2}));
-        log.info("Peaks solution : {}", new Peaks().solution(new int[]{1, 2, 3, 1}));
     }
 }
